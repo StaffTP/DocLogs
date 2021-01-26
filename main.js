@@ -52,4 +52,4 @@ client.on('messageDelete',async(message)=>{
 })
 
 
-client.login('ODAzNjQyNDI0MzMzMzAzODQ4.YBAwVA.G_k3-I_KgKOGfnccCcKesm0Nc70');
+client.login('token');
