@@ -43,8 +43,8 @@ client.on('message', message => {
     }
 });
 
-client.on('guildMemberRemove', async member => {
-    require('./events/guild/guildMemberRemove.js')(member)
+client.on('guildMemberRemove', async (member, message) => {
+    require('./events/guild/guildMemberRemove.js')(message, member)
 })
 
 client.on('messageUpdate',async(oldMessage,newMessage)=>{
@@ -53,6 +53,10 @@ client.on('messageUpdate',async(oldMessage,newMessage)=>{
 
 client.on('messageDelete',async(message)=>{
     require('./events/guild/messageDelete.js')(message)
+})
+
+client.on('guildBanAdd',async(message)=>{
+    require('./events/guild/guildBanAdd.js')(message)
 })
 
 
