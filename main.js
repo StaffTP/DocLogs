@@ -21,7 +21,7 @@ const activities_list = [
     "Tristan's Repository", 
     "Discord.js Library!",
     "Your Messages!"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
+    ]; // array
 
 client.on('ready', () => {
     console.log('logged in')
