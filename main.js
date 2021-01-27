@@ -43,6 +43,10 @@ client.on('message', message => {
     }
 });
 
+client.on('guildMemberRemove', async member => {
+    require('./events/guild/guildMemberRemove.js')(member)
+})
+
 client.on('messageUpdate',async(oldMessage,newMessage)=>{
     require('./events/guild/messageUpdate.js')(oldMessage,newMessage)
 })

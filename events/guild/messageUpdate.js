@@ -4,6 +4,7 @@ module.exports=async(oldMessage,newMessage)=>{
     .setTitle(`${newMessage.author.tag} | **Message Edited** :pencil:`)
     .setDescription('**__Message Information__**')
     .setColor('GREEN')
+    .addField(`Channel ID:`,`<#${newMessage.channel.id}>`, false)
     .addField('Before',oldMessage.content,true)
     .addField('After',newMessage.content,true)
     .setThumbnail(newMessage.author.avatarURL({dynamic: true}))
