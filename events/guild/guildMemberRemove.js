@@ -1,11 +1,12 @@
 const {MessageEmbed, Message} = require('discord.js');
 module.exports=async(message, member) => {
-  const fetchedlogs = await member.guild.fetchAuditLogs({
+  const fetchedlogs = await guild.fetchAuditLogs({
     limit: 1,
     type: "MEMBER_KICK",
   });
-    let channel = message.guild.channels.cache.find(ch=>ch.name==="doc-logs")
-    const kickLog = fetchedLogs.entries.first();
+    const channel = message.guild.channels.cache.find(ch=>ch.name==="doc-logs")
+    const kickLog = fetchedlogs.entries.first();
+    if(!channel) return;
 
     if(!kickLog) {
       const embed = new MessageEmbed()
@@ -16,7 +17,6 @@ module.exports=async(message, member) => {
       .setTimestamp()
       .setFooter(`${member.user.tag}'s ID: ${member.user.id}`);
       channel.send(embed)
-      if(!channel) return;
       
     }
     const { executor, target } = kickLog;
@@ -30,7 +30,6 @@ module.exports=async(message, member) => {
       .setTimestamp()
       .setFooter(`${member.user.tag}'s ID: ${member.user.id}`);
       channel.send(kickedembed)
-      if(!channel) return;
     } else {
       const unknownleft = new MessageEmbed()
       .setTitle(`${member.user.tag} | Member Left :rocket:`)
@@ -39,7 +38,6 @@ module.exports=async(message, member) => {
       .setTimestamp()
       .setFooter(`${member.user.tag}'s ID: ${member.user.id}`);
       channel.send(unknownleft);
-      if(!channel) return;
     }
 
 

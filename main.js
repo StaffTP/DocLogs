@@ -55,8 +55,8 @@ client.on('messageDelete',async(message)=>{
     require('./events/guild/messageDelete.js')(message)
 })
 
-client.on('guildBanAdd',async(message)=>{
-    require('./events/guild/guildBanAdd.js')(message)
+client.on('guildBanAdd',async(guild, message, user)=>{
+    require('./events/guild/guildBanAdd.js')(guild, message, user)
 })
 
 
