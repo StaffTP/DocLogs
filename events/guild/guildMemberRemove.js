@@ -38,6 +38,7 @@ module.exports=async(message, member) => {
       .addField('ERROR:', `Unable to grab leave reason for ${member.user.tag}!`)
       .setTimestamp()
       .setFooter(`${member.user.tag}'s ID: ${member.user.id}`);
+      channel.send(unknownleft);
       if(!channel) return;
     }
 
