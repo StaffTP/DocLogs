@@ -60,4 +60,4 @@ client.on('guildBanAdd',async(guild, message, user)=>{
 })
 
 
-client.login('ODAzNjQyNDI0MzMzMzAzODQ4.YBAwVA.G_k3-I_KgKOGfnccCcKesm0Nc70');
+client.login('Your Token Here');
